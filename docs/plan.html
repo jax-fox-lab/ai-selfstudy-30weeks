@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 硕士自学 30 周打卡表 · 2026.11.30 – 2027.06.30</title>
+<style>
+  :root{--ink:#1f2329;--muted:#646a73;--line:#e5e6eb;--b1:#e8f1fb;--b2:#185fa5;--t1:#e1f5ee;--t2:#0f6e56;--a1:#faeeda;--a2:#854f0b;--r1:#fcebeb;--r2:#a32d2d;--p1:#eeedfe;--p2:#534ab7;--bg:#fff;--soft:#f7f8fa}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.65}
+  .wrap{max-width:1080px;margin:0 auto;padding:40px 28px 80px}
+  h1{font-size:26px;font-weight:600;margin:0 0 6px}
+  h2{font-size:20px;font-weight:600;margin:44px 0 14px;padding-left:12px;border-left:4px solid var(--b2)}
+  h3{font-size:16px;font-weight:600;margin:26px 0 10px}
+  p{margin:8px 0}
+  .sub{color:var(--muted);font-size:13px}
+  .meta{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0}
+  .meta b{color:var(--b2)}
+  a{color:var(--b2);text-decoration:none;border-bottom:1px solid #b5d4f4}
+  a:hover{border-bottom-color:var(--b2)}
+  table{border-collapse:collapse;width:100%;margin:10px 0 18px;font-size:13px}
+  th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top;text-align:left}
+  th{background:var(--soft);font-weight:600;white-space:nowrap}
+  tr:nth-child(even) td{background:#fcfcfd}
+  .wk{white-space:nowrap;font-weight:600;color:var(--b2)}
+  .date{white-space:nowrap;color:var(--muted);font-size:12px}
+  .tag{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+  .t-blue{background:var(--b1);color:var(--b2)}.t-teal{background:var(--t1);color:var(--t2)}
+  .t-amber{background:var(--a1);color:var(--a2)}.t-red{background:var(--r1);color:var(--r2)}
+  .t-purple{background:var(--p1);color:var(--p2)}
+  .phase{border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:22px 0;background:#fff}
+  .phase-h{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+  .phase-h h3{margin:0;font-size:17px}
+  .ck{accent-color:var(--b2);width:15px;height:15px;cursor:pointer;vertical-align:middle}
+  label.ckl{cursor:pointer;user-select:none;font-size:12px;color:var(--muted)}
+  .book{padding-left:0;list-style:none}
+  .book li{padding:7px 0 7px 4px;border-bottom:1px dashed var(--line)}
+  .book li:last-child{border-bottom:0}
+  .req{color:var(--r2);font-size:11px;font-weight:600;margin-left:6px}
+  .opt{color:var(--muted);font-size:11px;margin-left:6px}
+  .vid{color:var(--p2);font-size:11px;font-weight:600;margin-left:6px}
+  .note{background:var(--a1);border-left:3px solid var(--a2);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:13px}
+  .warn{background:var(--r1);border-left:3px solid var(--r2);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:13px}
+  .ok{background:var(--t1);border-left:3px solid var(--t2);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:13px}
+  code{background:var(--soft);padding:1px 5px;border-radius:4px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+  .toc{columns:2;column-gap:32px}
+  .toc a{display:block;padding:3px 0;border:0}
+  .toolbar{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);padding:10px 0;z-index:9;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;font-size:12px;cursor:pointer;color:var(--ink)}
+  .btn:hover{background:var(--soft)}
+  .prog{font-size:12px;color:var(--muted);margin-left:auto}
+  .chkrow td:first-child{white-space:nowrap}
+  .done td:not(:first-child){opacity:.45;text-decoration:line-through}
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:14px 0}
+  .stat-card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--soft)}
+  .stat-num{font-size:25px;font-weight:600;color:var(--b2);line-height:1.25}
+  .stat-label{font-size:12px;color:var(--muted);margin-top:3px}
+  .stat-sub{font-size:11px;color:var(--muted);margin-top:5px;border-top:1px solid var(--line);padding-top:5px}
+  .dash-top{display:flex;align-items:center;gap:26px;flex-wrap:wrap;padding:6px 0 16px;border-bottom:1px solid var(--line)}
+  .dash-top svg{flex:0 0 auto}
+  .legend{font-size:12px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+  .phasebar{margin:9px 0}
+  .phasebar-hd{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
+  .phasebar-track{height:9px;background:var(--soft);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .phasebar-fill{height:100%;border-radius:6px;transition:width .35s ease}
+  .heatgrid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin:12px 0}
+  .hcell{border:1px solid var(--line);border-radius:7px;padding:7px 3px;text-align:center;font-size:11px;line-height:1.4;background:var(--soft);color:var(--muted)}
+  .hcell b{display:block;font-size:12px;font-weight:600}
+  .hcell.is-done{border-color:transparent}
+  .trend{display:flex;align-items:flex-end;gap:4px;height:74px;padding:6px 0;border-bottom:1px solid var(--line)}
+  .tbar{flex:1;background:var(--b1);border-radius:3px 3px 0 0;min-height:2px;position:relative}
+  .tbar span{position:absolute;bottom:-17px;left:0;right:0;text-align:center;font-size:9px;color:var(--muted)}
+  .io-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}
+  .io-row .btn{background:var(--b1);border-color:#b5d4f4;color:var(--b2)}
+  @media print{.toolbar,.io-row{display:none}.wrap{padding:0}h2{page-break-after:avoid}.phase{page-break-inside:avoid}.dash-top,.stat-grid{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>AI 硕士自学 30 周打卡表</h1>
+<p class="sub">软件工程背景 · 2026.11.30 – 2027.06.30 · 基于 CMU / 斯坦福 / 清华 / 教育部指导性培养方案压缩</p>
+
+<div class="meta">
+<b>怎么用：</b>每周勾一个方框（进度自动存浏览器）；「章节」是输入，「作业」是动手，「产出」是可展示的仓库文件，「验收」是过线标准——四项齐了才算打卡成功。<br>
+<b>时间预算：</b>常规周 12–15 小时；春节周（W11）只做复习。全程约 400 小时。<br>
+<b>来源可信度：</b>文中所有链接已于 2026-11-23 逐条实测，剔除死链；Hugging Face 直连在本机返回 502，已统一替换为国内镜像 hf-mirror.com。
+</div>
+
+<div class="toolbar">
+  <button class="btn" onclick="window.print()">打印 / 导出 PDF</button>
+  <button class="btn" onclick="exportProgress()">导出进度 JSON</button>
+  <button class="btn" onclick="document.getElementById('importFile').click()">导入进度</button>
+  <input type="file" id="importFile" accept=".json" style="display:none" onchange="importProgress(event)">
+  <button class="btn" onclick="resetAll()">清空打卡</button>
+  <span class="prog" id="prog"></span>
+</div>
+
+<div class="toc">
+  <a href="#dash">一、学习数据视图</a>
+  <a href="#s1">二、30 周总览表</a>
+  <a href="#s2">三、五阶段书单与视频清单</a>
+  <a href="#s3">四、参考来源与课程映射</a>
+  <a href="#s4">五、执行风险与取舍</a>
+</div>
+
+<h2 id="dash">一、学习数据视图</h2>
+<div class="meta">
+<b>数据来源：</b>下方周表里的勾选。每次勾选会记录完成日期，统计全部在浏览器本地计算，不上传任何服务器。<br>
+<b>同步到 GitHub：</b>点「导出进度 JSON」→ 把文件放到仓库 <code>data/progress.json</code> → push 后 GitHub Actions 自动刷新 README 里的统计图表。
+</div>
+
+<div class="dash-top">
+  <svg width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="总进度环">
+    <circle cx="64" cy="64" r="52" fill="none" stroke="#e5e6eb" stroke-width="12"/>
+    <circle id="ring" cx="64" cy="64" r="52" fill="none" stroke="#185fa5" stroke-width="12" stroke-linecap="round"
+            stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 64 64)"/>
+    <text id="ringPct" x="64" y="60" text-anchor="middle" font-size="24" font-weight="600" fill="#185fa5">0%</text>
+    <text x="64" y="79" text-anchor="middle" font-size="11" fill="#646a73">总进度</text>
+  </svg>
+  <div style="flex:1;min-width:260px">
+    <div class="phasebar-hd"><b>五阶段完成度</b><span class="sub" id="phaseSum"></span></div>
+    <div id="phaseBars"></div>
+    <div class="legend" style="margin-top:10px">
+      <span><i style="background:#185fa5"></i>阶段一 数学</span>
+      <span><i style="background:#0f6e56"></i>阶段二 ML</span>
+      <span><i style="background:#534ab7"></i>阶段三 DL</span>
+      <span><i style="background:#854f0b"></i>阶段四 选修</span>
+      <span><i style="background:#a32d2d"></i>阶段五 项目</span>
+    </div>
+  </div>
+</div>
+
+<div class="stat-grid">
+  <div class="stat-card"><div class="stat-num" id="stWeeks">0 / 30</div><div class="stat-label">已完成周数</div><div class="stat-sub" id="stRemain">剩余 30 周</div></div>
+  <div class="stat-card"><div class="stat-num" id="stHours">0 h</div><div class="stat-label">累计投入（估算）</div><div class="stat-sub">按各阶段标准周工时计</div></div>
+  <div class="stat-card"><div class="stat-num" id="stStreak">0 周</div><div class="stat-label">当前连续打卡</div><div class="stat-sub" id="stBest">最长 0 周</div></div>
+  <div class="stat-card"><div class="stat-num" id="stPace">—</div><div class="stat-label">实际周均工时</div><div class="stat-sub" id="stEta">完成周尚无记录</div></div>
+  <div class="stat-card"><div class="stat-num" id="stLast">—</div><div class="stat-label">最近一次打卡</div><div class="stat-sub" id="stDays">距今 — 天</div></div>
+</div>
+
+<h3>30 周打卡热力图</h3>
+<div class="heatgrid" id="heat"></div>
+<p class="sub">每格一周，数字为周次。深色 = 已完成，浅色 = 未完成；悬停可看完成日期。</p>
+
+<h3>每周完成节奏</h3>
+<div class="trend" id="trend"></div>
+<p class="sub" style="margin-top:22px">柱高 = 该周记录的实际投入小时（在下方勾选后可手动补录，默认按标准工时）。</p>
+
+<div class="io-row">
+  <button class="btn" onclick="exportProgress()">导出进度 JSON（用于 GitHub）</button>
+  <button class="btn" onclick="copySummary()">复制 Markdown 摘要</button>
+  <span class="sub" id="ioMsg"></span>
+</div>
+
+<h2 id="s1">二、30 周总览表</h2>
+
+<!-- ============ PHASE 1 ============ -->
+<div class="phase">
+<div class="phase-h"><h3><span class="tag t-blue">阶段一</span> 数学筑基与工具 · W1–W5（11.30 – 01.03）</h3><span class="sub">目标：补齐软工背景最短的那块板</span></div>
+<table>
+<thead><tr><th>周次</th><th>日期</th><th>主题</th><th>具体章节</th><th>作业</th><th>产出物</th><th>验收标准</th></tr></thead>
+<tbody>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w1"><span class="wk">W1</span></td><td class="date">11.30–12.06</td><td>向量与矩阵</td><td>3Blue1Brown 线代本质 P1–4；MIT 18.065 Lec1–2；NumPy 矩阵运算</td><td>不调 <code>np.linalg</code> 手写 3×3 行列式与逆；矩阵乘法 = 线性变换复合的证明题</td><td><code>math/w1-matrix.ipynb</code></td><td>手算逆与库函数误差 &lt; 1e-6</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w2"><span class="wk">W2</span></td><td class="date">12.07–12.13</td><td>特征值与 SVD</td><td>3Blue1Brown P5–9；MIT 18.065 Lec3–5；PyTorch 张量基础</td><td>SVD 图像压缩，对比 k=10/50/100；PyTorch 广播练习 10 题</td><td><code>math/w2-svd.ipynb</code> + 压缩对比图</td><td>讲得清 SVD 与 PCA 的关系</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w3"><span class="wk">W3</span></td><td class="date">12.14–12.20</td><td>概率与统计</td><td>CS229 概率复习讲义；CMU 36-700 先修；MLE 极大似然</td><td>手写伯努利/高斯 MLE；Monte Carlo 估 π；贝叶斯公式 10 题</td><td><code>math/w3-mle.ipynb</code></td><td>能从负对数似然推出 MSE 目标</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w4"><span class="wk">W4</span></td><td class="date">12.21–12.27</td><td>凸优化基础</td><td>Boyd Convex Optimization Ch1–3；李沐 D2L 11.1–11.6</td><td>实现 GD / SGD / Momentum / Adam，在二次函数与 Rosenbrock 上比收敛</td><td><code>math/w4-opt.ipynb</code> + 收敛曲线</td><td>能判断函数凸性；4 条曲线齐全</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w5"><span class="wk">W5</span></td><td class="date">12.28–01.03<br><span class="tag t-amber">含元旦</span></td><td>工具链整合<br>+ 阶段测验</td><td>PyTorch 60 分钟入门；Git/GitHub 工作流；sklearn 速览</td><td>从零实现线性回归 + 逻辑回归（禁用 sklearn 训练接口）</td><td><code>ml-from-scratch/</code> 仓库骨架 + 两算法</td><td>≥5 次 git commit；R²&gt;0.9 / 准确率&gt;0.8</td></tr>
+</tbody></table>
+</div>
+
+<!-- ============ PHASE 2 ============ -->
+<div class="phase">
+<div class="phase-h"><h3><span class="tag t-blue">阶段二</span> 机器学习核心 · W6–W10（01.04 – 02.07）</h3><span class="sub">目标：CS229 全程 + 西瓜书查漏，建立推导能力</span></div>
+<table>
+<thead><tr><th>周次</th><th>日期</th><th>主题</th><th>具体章节</th><th>作业</th><th>产出物</th><th>验收标准</th></tr></thead>
+<tbody>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w6"><span class="wk">W6</span></td><td class="date">01.04–01.10</td><td>线性回归 / LWR</td><td>CS229 Lec1–3；西瓜书 Ch3 线性回归</td><td>CS229 Problem Set 1（概率 + 线性回归证明）；PyTorch 训练循环</td><td><code>cs229/ps1.pdf</code>, <code>hw1-linear.ipynb</code></td><td>PS1 每题都有推导过程</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w7"><span class="wk">W7</span></td><td class="date">01.11–01.17</td><td>逻辑回归 / 指数族 / GLM</td><td>CS229 Lec4–5；李航《统计学习方法》Ch2 感知机、Ch6 逻辑回归</td><td>从指数族推导 logistic 与 softmax；手写多分类逻辑回归</td><td><code>cs229/hw2-logistic.ipynb</code></td><td>MNIST 子集准确率 &gt; 0.85</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w8"><span class="wk">W8</span></td><td class="date">01.18–01.24</td><td>生成学习 / SVM / 核方法</td><td>CS229 Lec6–7；西瓜书 Ch6 SVM</td><td>实现 GDA 与朴素贝叶斯垃圾邮件分类；sklearn SVC 多核对比</td><td><code>cs229/hw3-gda-svm.ipynb</code></td><td>讲得清 GDA（生成）与逻辑回归（判别）之别</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w9"><span class="wk">W9</span></td><td class="date">01.25–01.31<br><span class="tag t-amber">1/31 补班</span></td><td>决策树 / 集成 / 无监督</td><td>CS229 Lec8–11；西瓜书 Ch4 决策树、Ch8 集成学习</td><td>手写 k-means + GMM 的 EM；Kaggle Titanic 首次提交</td><td><code>cs229/hw4-unsup.ipynb</code> + 提交截图</td><td>EM 有收敛曲线；Kaggle 首交完成</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w10"><span class="wk">W10</span></td><td class="date">02.01–02.07<br><span class="tag t-red">春节前</span></td><td>学习理论 / 正则化<br>+ 阶段测验</td><td>CS229 Lec12–13（VC 维、泛化界）；吴恩达《ML Yearning》Ch1–8</td><td>完整走一遍 Titanic：特征工程 → 交叉验证 → 提交；偏差/方差诊断</td><td><code>kaggle-titanic/</code> + 诊断报告</td><td>能解释偏差方差权衡；成绩可复现</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w11"><span class="wk">W11</span></td><td class="date">02.08–02.14<br><span class="tag t-red">春节弹性周</span></td><td>只复习，不开新课</td><td>重看 W6–W10 错题与笔记；整理 CS229 公式表</td><td><strong>春节 2/5–2/13 连休 9 天</strong>，2/14 补班。只做低强度回顾</td><td><code>cs229/cheatsheet.pdf</code> + 错题清单</td><td>完成即可，不设新内容</td></tr>
+</tbody></table>
+</div>
+
+<!-- ============ PHASE 3 ============ -->
+<div class="phase">
+<div class="phase-h"><h3><span class="tag t-blue">阶段三</span> 深度学习主干 · W12–W18（02.15 – 04.04）</h3><span class="sub">目标：CS231n + CS224n + 李沐 D2L 三线并行，手写反向传播</span></div>
+<table>
+<thead><tr><th>周次</th><th>日期</th><th>主题</th><th>具体章节</th><th>作业</th><th>产出物</th><th>验收标准</th></tr></thead>
+<tbody>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w12"><span class="wk">W12</span></td><td class="date">02.15–02.21</td><td>神经网络与反向传播</td><td>CS231n Lec2–4（图像分类、损失、反向传播）；3Blue1Brown 神经网络 P1–3；D2L Ch4</td><td>CS231n Assignment 1：KNN、线性分类器、两层网络手写反向</td><td><code>cs231n/a1-nn.ipynb</code></td><td>两层网络 CIFAR-10 准确率 &gt; 0.45</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w13"><span class="wk">W13</span></td><td class="date">02.22–02.28</td><td>CNN 与训练技巧</td><td>CS231n Lec5–6（CNN、初始化、正则化、梯度检查）；D2L Ch7</td><td>CS231n Assignment 2：手写卷积/池化前向反向、BatchNorm、Dropout</td><td><code>cs231n/a2-cnn.ipynb</code></td><td>梯度检查通过；CNN CIFAR-10 &gt; 0.55</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w14"><span class="wk">W14</span></td><td class="date">03.01–03.07</td><td>视觉进阶 + 迁移学习</td><td>CS231n Lec7–9（迁移、检测分割）；D2L Ch13；Lec10–11（RNN、注意力预告）</td><td>ResNet18 迁移学习微调自定数据集；CS231n Assignment 3（RNN + Transformer）</td><td><code>cv-transfer/</code>, <code>cs231n/a3.ipynb</code></td><td>迁移学习准确率 &gt; 0.85；讲得清为何省数据</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w15"><span class="wk">W15</span></td><td class="date">03.08–03.14</td><td>词向量与序列模型</td><td>CS224n Lec1–3（Word2Vec、GloVe）；Lec4–6（RNN/LSTM/GRU）；D2L Ch8–9</td><td>CS224n Assignment 1（Word2Vec + 词向量分析）；手写 LSTM 情感分类</td><td><code>cs224n/a1-word2vec.ipynb</code></td><td>能推导负采样目标；词类比任务有结果</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w16"><span class="wk">W16</span></td><td class="date">03.15–03.21</td><td>Transformer 与预训练</td><td>CS224n Lec7–9（Transformer、BERT）；The Illustrated Transformer；李沐论文精读 Transformer/BERT</td><td>从零实现多头注意力 + Transformer block；HF 微调 BERT 做 SST-2</td><td><code>nlp/transformer.ipynb</code> + HF 微调记录</td><td>写得出 scaled dot-product attention；GLUE 有分数</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w17"><span class="wk">W17</span></td><td class="date">03.22–03.28</td><td>生成模型入门</td><td>CS236 Lec1–4（自回归、VAE、GAN）；D2L 14.11–14.12；fast.ai Lesson1–3</td><td>PyTorch 训练 DCGAN 生成 MNIST/Fashion-MNIST，记录生成图</td><td><code>gan/</code> + 生成样例图</td><td>生成图有数字轮廓；讲得清 min-max 目标</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w18"><span class="wk">W18</span></td><td class="date">03.29–04.04<br><span class="tag t-amber">含清明</span></td><td>阶段整合测验</td><td>fast.ai Lesson4–7；MIT 6.S191 全部 Lecture</td><td>选一个 Kaggle CV 或 NLP 赛完整做一遍（数据→基线→调参→提交）</td><td><code>dl-capstone/</code> + 5 页技术总结</td><td>完整提交记录；总结能画清模型结构图</td></tr>
+</tbody></table>
+</div>
+
+<!-- ============ PHASE 4 ============ -->
+<div class="phase">
+<div class="phase-h"><h3><span class="tag t-teal">阶段四</span> 进阶方向选修 · W19–W25（04.05 – 05.23）</h3><span class="sub">三选一 · 下表按「大模型系统」排主线，另两方向见下方替代路径</span></div>
+<table>
+<thead><tr><th>周次</th><th>日期</th><th>主题</th><th>具体章节</th><th>作业</th><th>产出物</th><th>验收标准</th></tr></thead>
+<tbody>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w19"><span class="wk">W19</span></td><td class="date">04.05–04.11</td><td>大模型生态与架构</td><td>HF LLM Course Ch1–3（镜像）；CS224n Lec10–12；Qwen 技术报告</td><td>加载 Qwen2.5-0.5B/1.5B，完成生成与 chat template</td><td><code>llm/01-load.ipynb</code></td><td>本地/免费算力跑通开源模型推理</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w20"><span class="wk">W20</span></td><td class="date">04.12–04.18</td><td>微调范式 / LoRA</td><td>HF LLM Course Ch4–7；LLaMA-Factory 文档；LoRA + QLoRA 论文</td><td>用 LLaMA-Factory 对 Qwen 做 LoRA 指令微调（自建 1000 条数据集）</td><td><code>llm/02-lora-sft/</code></td><td>微调后自测集回答优于原始模型</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w21"><span class="wk">W21</span></td><td class="date">04.19–04.25</td><td>RAG 检索增强</td><td>LangChain / LlamaIndex 官方教程；RAGAS 文档</td><td>搭个人知识库 RAG：PDF→切分→向量化→FAISS→检索→回答</td><td><code>llm/03-rag/</code></td><td>能答文档内问题；附 RAGAS 评估</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w22"><span class="wk">W22</span></td><td class="date">04.26–05.02<br><span class="tag t-amber">含劳动节</span></td><td>Agent 与工具调用</td><td>HF Agents Course（镜像）；LangGraph 教程；ReAct 论文</td><td>实现能调用搜索/计算器的 ReAct Agent，完成多步推理</td><td><code>llm/04-agent/</code></td><td>完成 ≥3 步工具调用链</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w23"><span class="wk">W23</span></td><td class="date">05.03–05.09<br><span class="tag t-amber">5/8 补班</span></td><td>推理部署与量化</td><td>vLLM 文档；Ollama 文档；GPTQ/AWQ 速览</td><td>vLLM 部署微调模型 + FastAPI 封装；4bit 量化对比速度与困惑度</td><td><code>llm/05-serving/</code></td><td>API 可并发；困惑度差异可解释</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w24"><span class="wk">W24</span></td><td class="date">05.10–05.16</td><td>论文精读周</td><td>Attention→BERT→GPT-3→LLaMA→InstructGPT→DPO 逐篇；李沐论文精读辅助</td><td>写 2 篇论文笔记（方法/实验/局限/启发）</td><td><code>paper-notes/</code> 2 篇 md</td><td>每篇能复述核心公式与实验设置</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w25"><span class="wk">W25</span></td><td class="date">05.17–05.23</td><td>方向作品集整合</td><td>回看 W19–W24 全部仓库，补 README 与实验结果</td><td>整理方向作品集页（GitHub Profile README 或个人主页）</td><td>方向作品集页面</td><td>5 个项目都有可运行 README 和结果</td></tr>
+</tbody></table>
+<div class="note"><b>另两个方向的 W19–W25 替换方案：</b><br>
+<b>强化学习：</b>Sutton &amp; Barto 教材 Ch1–6 → CS234 Lec1–6（MDP、动态规划、蒙特卡洛、TD）→ Spinning Up 实操 → UC Berkeley Deep RL Course → 实现 PPO 打通 CartPole/MuJoCo → 精读 PPO/DQN 论文 → 作品集。<br>
+<b>概率图模型 / 生成模型：</b>Koller《PGM》Ch1–8 → CMU 10-708 讲义（课程主页已下线，用讲义存档）→ CS236 Lec5–12（VAE→GAN→扩散）→ DDPM 论文复现 → 精读 VAE/GAN/Diffusion 三篇 → 作品集。</div>
+</div>
+
+<!-- ============ PHASE 5 ============ -->
+<div class="phase">
+<div class="phase-h"><h3><span class="tag t-teal">阶段五</span> Capstone 毕业项目 · W26–W30（05.24 – 06.30）</h3><span class="sub">对标 CMU 硕士 practicum / 国内硕士学位论文</span></div>
+<table>
+<thead><tr><th>周次</th><th>日期</th><th>主题</th><th>具体章节</th><th>作业</th><th>产出物</th><th>验收标准</th></tr></thead>
+<tbody>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w26"><span class="wk">W26</span></td><td class="date">05.24–05.30</td><td>选题与开题</td><td>回顾全部课程，确定端到端题目（建议：领域 RAG + LoRA 微调 + vLLM 部署，或论文核心复现）</td><td>写开题报告：问题、动机、方案、数据集、指标、里程碑、风险</td><td><code>capstone/proposal.md</code></td><td>题目 4 周内可完成，指标明确</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w27"><span class="wk">W27</span></td><td class="date">05.31–06.06</td><td>数据准备与基线</td><td>数据收集/清洗/划分；MLflow 或 TensorBoard 实验记录</td><td>实现最简单 baseline，跑通全流程</td><td><code>capstone/data/</code> + baseline 结果</td><td>数据可复现；baseline 有量化分数</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w28"><span class="wk">W28</span></td><td class="date">06.07–06.13</td><td>核心系统实现</td><td>实现核心方法（模型/算法/系统），完成主实验</td><td>一键运行脚本；设置对照组</td><td><code>capstone/src/</code> 核心代码</td><td>代码可复现；实验有对照</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w29"><span class="wk">W29</span></td><td class="date">06.14–06.20<br><span class="tag t-amber">含端午 6/9</span></td><td>评测 / 消融 / 迭代</td><td>消融实验；与 baseline 对比；错误分析；报告初稿</td><td>至少 2 组消融；画图表</td><td><code>capstone/report-draft.md</code> + 图表</td><td>结论有数据支撑</td></tr>
+<tr class="chkrow"><td><input type="checkbox" class="ck" data-k="w30"><span class="wk">W30</span></td><td class="date">06.21–06.30</td><td>技术报告 + 总复盘</td><td>写 15 页报告（摘要/引言/相关工作/方法/实验/结论/局限）；准备 10 分钟演示</td><td>定稿报告 + 录演示视频 + 全程复盘清单</td><td><code>capstone/report.pdf</code> + 演示视频</td><td>报告结构完整；项目可公开演示</td></tr>
+</tbody></table>
+</div>
+
+<h2 id="s2">三、五阶段书单与视频清单</h2>
+
+<div class="phase">
+<h3><span class="tag t-blue">阶段一</span> 数学筑基与工具</h3>
+<p class="sub">对应 CMU 36-700（概率统计）+ 10-725（凸优化）+ 上交电院「数学必修占专业课 30%」+ 哈工大「矩阵分析、应用随机过程」。</p>
+<h3>书单</h3>
+<ul class="book">
+<li><b>《线性代数应该这样学》</b> Sheldon Axler — 第 1–5 章，从线性映射角度入门，避免行列式先行 <span class="opt">选看</span></li>
+<li><b>《Linear Algebra and Its Applications》</b> Gilbert Strang — 第 1–6 章，配合 MIT 18.065 <span class="opt">选看</span></li>
+<li><b>《Convex Optimization》</b> Stephen Boyd &amp; Lieven Vandenberghe — 第 1–5 章（凸集、凸函数、优化问题），第 9–10 章（无约束/等式约束） <a href="https://web.stanford.edu/~boyd/cvxbook/" target="_blank">官方免费 PDF</a> <span class="req">必看</span></li>
+<li><b>《动手学深度学习》</b> 李沐等 — 第 2.3–2.6 节（线代/微积分/概率/自动微分）、11.1–11.6 节（优化） <a href="https://zh.d2l.ai/" target="_blank">在线版</a> <span class="req">必看</span></li>
+<li><b>《概率论与数理统计》</b> 浙大盛骤版 — 用作概率部分查漏工具书 <span class="opt">选看</span></li>
+</ul>
+<h3>视频</h3>
+<ul class="book">
+<li><a href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank">3Blue1Brown《线性代数的本质》</a> — 10 集，建立几何直觉 <span class="vid">视频必看</span></li>
+<li><a href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/" target="_blank">MIT 18.065 Matrix Methods</a> — Lec1–5，SVD 与低秩结构 <span class="vid">视频</span></li>
+<li>B 站搜「李沐 动手学深度学习」— 跟视频逐段跑代码 <span class="vid">视频</span></li>
+<li>PyTorch 官方 60 分钟入门（<a href="https://pytorch.org/tutorials/" target="_blank">Tutorials</a>） <span class="vid">视频/教程</span></li>
+</ul>
+</div>
+
+<div class="phase">
+<h3><span class="tag t-blue">阶段二</span> 机器学习核心</h3>
+<p class="sub">对应 CMU 10-701（机器学习导论）+ 教育部指导方案「机器学习、人工智能模型与理论」+ 清华 80245013 机器学习。</p>
+<h3>书单</h3>
+<ul class="book">
+<li><b>《机器学习》</b> 周志华（西瓜书） — 当字典查，重点 Ch3 线性模型、Ch4 决策树、Ch6 SVM、Ch8 集成 <a href="https://github.com/datawhalechina/pumpkin-book" target="_blank">南瓜书（公式推导辅助）</a> <span class="req">必看</span></li>
+<li><b>《统计学习方法》</b> 李航 — Ch2 感知机、Ch6 逻辑回归、Ch7 SVM；作者 <a href="https://github.com/lijian13?tab=repositories" target="_blank">代码仓库</a> <span class="req">必看</span></li>
+<li><b>《Pattern Recognition and Machine Learning》</b> Christopher Bishop — Ch1–4，想深挖概率视角再读 <span class="opt">选看</span></li>
+<li><b>《Machine Learning: A Probabilistic Perspective》</b> Kevin Murphy — 当百科全书查阅 <span class="opt">选看</span></li>
+<li><b>《Machine Learning Yearning》</b> 吴恩达 — Ch1–8，工程实践建议 <a href="https://www.deeplearning.ai/courses/" target="_blank">DeepLearning.AI</a> <span class="req">必看</span></li>
+</ul>
+<h3>视频</h3>
+<ul class="book">
+<li><a href="https://cs229.stanford.edu/" target="_blank">Stanford CS229 Machine Learning</a> — 全程 Lec1–15 + Problem Sets + Notes，本阶段主轴 <span class="vid">视频必看</span></li>
+<li><a href="https://www.coursera.org/learn/machine-learning" target="_blank">吴恩达 Machine Learning Specialization</a> — 作为 CS229 的通俗补充，1.5 倍速 <span class="vid">视频选看</span></li>
+<li><a href="https://speech.ee.ntu.edu.tw/~hylee/ml/2026-spring.php" target="_blank">李宏毅机器学习 2026 Spring</a> — 中文、每年更新，台湾大学公开课 <span class="vid">视频</span></li>
+<li><a href="https://www.kaggle.com/learn" target="_blank">Kaggle Learn</a> — Intro to ML / Intermediate ML，浏览器里写代码 <span class="vid">实操</span></li>
+</ul>
+</div>
+
+<div class="phase">
+<h3><span class="tag t-blue">阶段三</span> 深度学习主干</h3>
+<p class="sub">对应 CMU 10-617 深度学习 + 教育部「计算机视觉、自然语言处理」+ 清华 80240743 深度学习 / 80240763 NLP。三线并行：李沐打底、CS231n 攻视觉、CS224n 攻 NLP。</p>
+<h3>书单</h3>
+<ul class="book">
+<li><b>《动手学深度学习》</b> 李沐等 — 主线教材，Ch4 多层感知机、Ch7 CNN、Ch8–9 RNN、Ch10 Attention、Ch13 CV、Ch14 NLP <a href="https://zh.d2l.ai/" target="_blank">在线版（中英双语，每节可运行）</a> <span class="req">必看</span></li>
+<li><b>《Deep Learning》</b> Goodfellow 等（花书） — Ch6 前馈网络、Ch7 正则化、Ch9 CNN、Ch10 RNN <a href="https://www.deeplearningbook.org/" target="_blank">官方免费在线版</a> <span class="opt">选看（偏理论）</span></li>
+<li><b>《Neural Networks and Deep Learning》</b> 邱锡鹏 — 中文，Transformer 之前的结构梳理 <span class="opt">选看</span></li>
+<li><b>《Python深度学习》</b> François Chollet — 第 2 版，Keras 作者，直觉解释好 <span class="opt">选看</span></li>
+<li><b>《Natural Language Processing with Transformers》</b> Lewis Tunstall 等 — HF 团队出品，W15–W16 配套 <span class="opt">选看</span></li>
+</ul>
+<h3>视频</h3>
+<ul class="book">
+<li><a href="https://cs231n.stanford.edu/" target="_blank">Stanford CS231n 深度学习与计算机视觉</a> — Assignment 1–3 必须手写，CIFAR-10 <span class="vid">视频必看</span></li>
+<li><a href="https://web.stanford.edu/class/cs224n/" target="_blank">Stanford CS224n 深度学习 NLP</a> — Lec1–12，Transformer/BERT 部分重点 <span class="vid">视频必看</span></li>
+<li><a href="https://introtodeeplearning.com/" target="_blank">MIT 6.S191 深度学习导论</a> — 每年更新，快节奏前沿 overview，W18 集中刷 <span class="vid">视频</span></li>
+<li><a href="https://course.fast.ai/" target="_blank">fast.ai Practical Deep Learning for Coders</a> — 自顶向下，先跑通再补原理，适合软工背景 <span class="vid">视频</span></li>
+<li><a href="https://deepgenerativemodels.github.io/" target="_blank">Stanford CS236 深度生成模型</a> — Lec1–4（VAE/GAN 入门） <span class="vid">视频选看</span></li>
+<li>B 站搜「李沐论文精读」— Transformer、BERT 两期，W16 配套 <span class="vid">视频</span></li>
+</ul>
+</div>
+
+<div class="phase">
+<h3><span class="tag t-teal">阶段四</span> 进阶方向选修（三选一）</h3>
+<p class="sub">对应 CMU 10-623 生成式 AI / 11-868 大模型系统 / 10-703 深度强化学习 / 10-708 概率图模型 + 斯坦福 CS234 / CS224W 等选修池。</p>
+
+<h3>方向 A · 大模型系统（推荐，软工背景最易出成果）</h3>
+<ul class="book">
+<li><b>Hugging Face LLM Course / NLP Course</b> — Ch1–7，分词→模型→微调→对齐 <a href="https://hf-mirror.com/" target="_blank">国内镜像</a> <span class="req">必看</span></li>
+<li><b>《动手学大模型》</b> Datawhale 系列 — <a href="https://github.com/datawhalechina/happy-llm" target="_blank">happy-llm</a>、<a href="https://github.com/datawhalechina/self-llm" target="_blank">self-llm</a>、<a href="https://github.com/datawhalechina/Learn-NLP-with-Transformers" target="_blank">NLP with Transformers</a> <span class="req">必看</span></li>
+<li><b>LoRA / QLoRA 原始论文</b> — <a href="https://github.com/microsoft/LoRA" target="_blank">LoRA</a>、<a href="https://github.com/artidoro/qlora" target="_blank">QLoRA</a> <span class="req">必看</span></li>
+<li><b>《Large Language Models: A Survey》</b> Zhao et al. — 全景综述，建立地图 <span class="opt">选看</span></li>
+<li><b>工具文档</b>：<a href="https://github.com/hiyouga/LLaMA-Factory" target="_blank">LLaMA-Factory</a>、<a href="https://github.com/langchain-ai/langchain" target="_blank">LangChain</a>、<a href="https://github.com/run-llama/llama_index" target="_blank">LlamaIndex</a>、<a href="https://github.com/explodinggradients/ragas" target="_blank">RAGAS</a>、<a href="https://docs.vllm.ai/" target="_blank">vLLM</a>、<a href="https://ollama.com/" target="_blank">Ollama</a>、<a href="https://qwen.readthedocs.io/" target="_blank">Qwen 文档</a> <span class="req">必看</span></li>
+</ul>
+<ul class="book">
+<li><a href="https://hf-mirror.com/learn/agents-course" target="_blank">HF Agents Course</a> — Agent 入门（国内镜像） <span class="vid">视频</span></li>
+<li>LangGraph 官方教程（<a href="https://github.com/langchain-ai/langchain" target="_blank">GitHub</a>） <span class="vid">实操</span></li>
+<li>B 站搜「李沐 论文精读 LLaMA / InstructGPT」 <span class="vid">视频</span></li>
+</ul>
+
+<h3>方向 B · 强化学习</h3>
+<ul class="book">
+<li><b>《Reinforcement Learning: An Introduction》</b> Sutton &amp; Barto — Ch1–6，<a href="https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf" target="_blank">官方 PDF</a> <span class="req">必看</span></li>
+<li><b>《Deep Reinforcement Learning Hands-On》</b> Maxim Lapan — PyTorch 实操 <span class="opt">选看</span></li>
+</ul>
+<ul class="book">
+<li><a href="https://web.stanford.edu/class/cs234/" target="_blank">Stanford CS234 Reinforcement Learning</a> — Lec1–6 <span class="vid">视频必看</span></li>
+<li><a href="https://spinningup.openai.com/en/latest/" target="_blank">OpenAI Spinning Up</a> — PPO 等算法从零实现教程 <span class="vid">实操必看</span></li>
+<li><a href="https://rail.eecs.berkeley.edu/deeprlcourse/" target="_blank">UC Berkeley Deep RL Course</a> — 进阶 <span class="vid">视频选看</span></li>
+</ul>
+
+<h3>方向 C · 概率图模型 / 生成模型</h3>
+<ul class="book">
+<li><b>《Probabilistic Graphical Models》</b> Daphne Koller &amp; Nir Friedman — Ch1–8，贝叶斯网/马尔可夫网/推断 <span class="req">必看</span></li>
+<li><b>《Deep Learning》</b> 花书 Ch16–20（生成模型） <span class="opt">选看</span></li>
+</ul>
+<ul class="book">
+<li><a href="https://cs236.stanford.edu/" target="_blank">Stanford CS236 Deep Generative Models</a> — Lec5–12，VAE→GAN→扩散 <span class="vid">视频必看</span></li>
+<li>CMU 10-708 PGM 讲义存档（旧课程主页已 404，建议搜索「CMU 10-708 lecture notes」） <span class="opt">补充</span></li>
+<li>B 站搜「李沐 扩散模型 DDPM 论文精读」 <span class="vid">视频</span></li>
+</ul>
+
+<h3>每周论文精读固定清单（W24 及阶段四贯穿）</h3>
+<ul class="book">
+<li>Attention Is All You Need (2017) → BERT (2018) → GPT-3 (2020) → LLaMA (2023) → InstructGPT / RLHF (2022) → DPO (2023)</li>
+<li>每篇输出：核心问题 / 方法一句话 / 关键公式 / 实验设置 / 局限 / 对自己的启发（半页到一页）</li>
+</ul>
+</div>
+
+<div class="phase">
+<h3><span class="tag t-teal">阶段五</span> Capstone 毕业项目</h3>
+<p class="sub">无新课，全部是输出。对标 CMU 机器学习硕士 practicum（实习/项目）+ 清华 CS 硕士学位论文要求。</p>
+<h3>参考资源</h3>
+<ul class="book">
+<li><b>学术写作</b>：《Writing for Computer Science》Justin Zobel — 论文结构与表达 <span class="opt">选看</span></li>
+<li><b>项目模板</b>：GitHub 上同方向优秀开源项目的 README 写法（如 <a href="https://github.com/hiyouga/LLaMA-Factory" target="_blank">LLaMA-Factory</a>） <span class="req">参考</span></li>
+<li><b>实验管理</b>：MLflow / TensorBoard 官方文档 <a href="https://pytorch.org/tutorials/" target="_blank">PyTorch 教程</a> <span class="req">必用</span></li>
+</ul>
+<div class="ok"><b>Capstone 三个候选题目（选一，都能在 4 周内做完）：</b><br>
+① 领域知识库问答系统：PDF 文档 RAG + Qwen LoRA 微调 + vLLM 部署 + Web 界面 + RAGAS 评测<br>
+② 论文核心复现：选一篇近两年 CV/NLP 论文，复现主实验并做消融<br>
+③ 垂直领域分类器：用迁移学习 + 集成做领域文本/图像分类，做成可调用 API</div>
+</div>
+
+<h2 id="s3">四、参考来源与课程映射</h2>
+<table>
+<thead><tr><th>学校 / 机构</th><th>真实课程或文件</th><th>本计划对应</th><th>链接</th></tr></thead>
+<tbody>
+<tr><td>CMU 机器学习系</td><td>MSML 6 门核心课 + 3 门选修 + practicum</td><td>全局骨架：数学 + ML + DL + PGM + 实践</td><td><a href="https://ml.cmu.edu/academics/machine-learning-masters-curriculum" target="_blank">课程页</a></td></tr>
+<tr><td>CMU ECE</td><td>MS-AIE：AI Systems / ML / Ethics / DL 四块核心</td><td>阶段四的 LLM 系统与工程侧重</td><td><a href="http://ece.cmu.edu/_files/academics/ms-pgh-catalog-handbook.pdf" target="_blank">2025-26 手册 PDF</a></td></tr>
+<tr><td>Stanford</td><td>CS229 / CS231n / CS224n / CS234 / CS236 / CS224W</td><td>阶段二、三、四的具体教材</td><td><a href="https://cs229.stanford.edu/" target="_blank">CS229</a> · <a href="https://cs231n.stanford.edu/" target="_blank">CS231n</a> · <a href="https://web.stanford.edu/class/cs224n/" target="_blank">CS224n</a></td></tr>
+<tr><td>教育部</td><td>《人工智能领域研究生指导性培养方案（试行）》核心课建议</td><td>数学优化、AI 模型与理论、CV、NLP 的必备性依据</td><td><a href="https://www.peopleapp.com/rmharticle/30029634192" target="_blank">人民日报转载</a></td></tr>
+<tr><td>清华大学 CS 系</td><td>硕士培养方案：高级机器学习、深度学习、NLP、模式识别、凸优化</td><td>阶段二、三课程群</td><td><a href="https://www.cs.tsinghua.edu.cn/__local/6/2B/74/43E402B80F178897CFE6FCED2AD_09F6E122_6157F.pdf" target="_blank">培养方案 PDF</a></td></tr>
+<tr><td>上海交大电院</td><td>AI 特色班：数学必修占专业课 30%，课程本硕博贯通</td><td>阶段一数学权重的依据</td><td><a href="https://www.jiemian.com/article/3128904.html" target="_blank">课程介绍报道</a></td></tr>
+<tr><td>哈工大</td><td>AI 培养体系：矩阵分析、应用随机过程、组合优化与凸优化</td><td>阶段一数学课表</td><td><a href="https://www.sgpjbg.com/searchtag/26732389.html" target="_blank">体系介绍</a></td></tr>
+<tr><td>国务院办公厅</td><td>2027 年节假日安排（春节 2/5–2/13 连休 9 天）</td><td>W11 弹性周排期依据</td><td><a href="https://www.gov.cn/zhengce/content/202611/content_7085101.htm" target="_blank">官方通知</a></td></tr>
+</tbody></table>
+
+<h2 id="s4">五、执行风险与取舍</h2>
+<div class="warn"><b>三个必须接受的现实：</b><br>
+1. <b>不等于真硕士。</b>7 个月 400 小时约等于全日制硕士一学年课程量的 60–70%，缺科研训练、缺系统课程深度、缺学位答辩。定位应是「读懂前沿论文 + 独立交付 AI 系统」。<br>
+2. <b>数学是最大风险。</b>软工背景通常线代/概率只学了一学期，W1–W4 卡住就全盘卡住。宁可 W5 多花一周补，也不要带着漏洞进 CS229。<br>
+3. <b>春节 + 毕业季会吃掉时间。</b>W11 已设弹性周；5–6 月若有毕业/求职压力，优先保 Capstone（W26–W30），砍阶段四的论文精读数量。</div>
+<div class="note"><b>每周必须守住的底线：</b>章节可以跳读，作业不能跳做。验收标准全部是代码/文档，不是看视频时长。每个产出物必须进 Git，每周至少 1 次 commit。<br>
+<b>失败模式：</b>同时开三门课 + 只看视频不做作业 = 7 个月零产出。按本表一次只推进一条线。</div>
+
+<script>
+const K='ai30w_progress_v2', OLD='ai30w_progress_v1';
+const PHASES=[
+  {n:'阶段一 数学筑基',from:1,to:5,h:14,c:'#185fa5'},
+  {n:'阶段二 ML 核心',from:6,to:11,h:14,c:'#0f6e56'},
+  {n:'阶段三 深度学习',from:12,to:18,h:15,c:'#534ab7'},
+  {n:'阶段四 方向选修',from:19,to:25,h:15,c:'#854f0b'},
+  {n:'阶段五 Capstone',from:26,to:30,h:20,c:'#a32d2d'}
+];
+const STD=Array.from({length:30},(_,i)=>PHASES.find(p=>i+1>=p.from&&i+1<=p.to).h);
+const today=()=>new Date().toISOString().slice(0,10);
+function load(){
+  let raw=localStorage.getItem(K);
+  if(!raw){const o=localStorage.getItem(OLD);if(o){const old=JSON.parse(o);const s={};Object.keys(old).forEach(k=>{if(old[k])s[k]={done:true,at:today(),hours:STD[+k.slice(1)-1]}});return s}return {}}
+  try{return JSON.parse(raw)}catch(e){return {}}
+}
+let state=load();
+function save(){localStorage.setItem(K,JSON.stringify(state))}
+function rec(k){const v=state[k];if(v&&typeof v==='object')return v;if(v===true)return {done:true,at:today(),hours:STD[+k.slice(1)-1]};return {done:false,at:null,hours:STD[+k.slice(1)-1]}}
+function isDone(k){const v=state[k];return !!(v&&typeof v==='object'?v.done:v===true)}
+
+function refresh(){
+  document.querySelectorAll('.ck').forEach(cb=>{
+    const done=isDone(cb.dataset.k);cb.checked=done;
+    cb.closest('tr').classList.toggle('done',done);
+  });
+  renderDash();
+}
+function renderDash(){
+  const done=Array.from({length:30},(_,i)=>isDone('w'+(i+1)));
+  const n=done.filter(Boolean).length,pct=Math.round(n/30*100);
+  document.getElementById('prog').textContent=`打卡进度：${n} / 30 周`;
+  document.getElementById('ring').setAttribute('stroke-dashoffset',(326.7*(1-pct/100)).toFixed(1));
+  document.getElementById('ringPct').textContent=pct+'%';
+
+  let bars='',sum=[];
+  PHASES.forEach(p=>{
+    const tot=p.to-p.from+1,dn=done.slice(p.from-1,p.to).filter(Boolean).length;
+    sum.push(`${dn}/${tot}`);
+    bars+=`<div class="phasebar"><div class="phasebar-hd"><span>${p.n}</span><span>${dn}/${tot} · ${Math.round(dn/tot*100)}%</span></div><div class="phasebar-track"><div class="phasebar-fill" style="width:${dn/tot*100}%;background:${p.c}"></div></div></div>`;
+  });
+  document.getElementById('phaseBars').innerHTML=bars;
+  document.getElementById('phaseSum').textContent=sum.join('  ·  ');
+
+  document.getElementById('stWeeks').textContent=`${n} / 30`;
+  document.getElementById('stRemain').textContent=`剩余 ${30-n} 周`;
+  const hours=done.reduce((a,d,i)=>a+(d?(rec('w'+(i+1)).hours||STD[i]):0),0);
+  document.getElementById('stHours').textContent=hours+' h';
+
+  let streak=0;for(let i=n-1;i>=0;i--){if(done[i])streak++;else break}
+  let best=0,cur=0;done.forEach(d=>{if(d){cur++;best=Math.max(best,cur)}else cur=0});
+  document.getElementById('stStreak').textContent=streak+' 周';
+  document.getElementById('stBest').textContent='最长 '+best+' 周';
+
+  const dates=done.map((d,i)=>d?rec('w'+(i+1)).at:null).filter(Boolean).sort();
+  if(dates.length){
+    const logged=done.reduce((a,d,i)=>a+(d?rec('w'+(i+1)).hours||STD[i]:0),0);
+    document.getElementById('stPace').textContent=Math.round(logged/dates.length)+' h';
+    const left=Math.max(0,30-n),avgH=logged/dates.length;
+    document.getElementById('stEta').textContent=`按此节奏还需约 ${Math.ceil(left*avgH/14)} 周`;
+    document.getElementById('stLast').textContent=dates[dates.length-1].slice(5);
+    const days=Math.floor((new Date(today())-new Date(dates[dates.length-1]))/86400000);
+    document.getElementById('stDays').textContent=`距今 ${days} 天`;
+  }
+
+  const cols={done:'#185fa5',todo:'#f7f8fa'},heat=done.map((d,i)=>{
+    const r=rec('w'+(i+1));const bg=d?PHASES.find(p=>i+1>=p.from&&i+1<=p.to).c:'#f7f8fa';
+    const fg=d?'#fff':'#8a8f98';
+    return `<div class="hcell ${d?'is-done':''}" style="background:${bg};color:${fg}" title="W${i+1}${r.at?' · 完成于 '+r.at:' · 未完成'}"><b>W${i+1}</b>${r.at?r.at.slice(5):'—'}</div>`;
+  }).join('');
+  document.getElementById('heat').innerHTML=heat;
+
+  const mx=Math.max(20,...done.map((d,i)=>d?(rec('w'+(i+1)).hours||STD[i]):0));
+  document.getElementById('trend').innerHTML=done.map((d,i)=>{
+    const h=d?(rec('w'+(i+1)).hours||STD[i]):0;
+    return `<div class="tbar" style="height:${h/mx*100}%;background:${d?'#185fa5':'#e5e6eb'}" title="W${i+1} · ${h}h"><span>${i+1}</span></div>`;
+  }).join('');
+}
+document.querySelectorAll('.ck').forEach(cb=>cb.addEventListener('change',()=>{
+  const k=cb.dataset.k,r=rec(k);
+  r.done=cb.checked;r.at=cb.checked?today():null;r.hours=r.hours||STD[+k.slice(1)-1];
+  state[k]=r;save();refresh();
+}));
+function resetAll(){if(confirm('确定清空全部打卡记录？')){state={};localStorage.removeItem(OLD);save();refresh();}}
+
+function exportProgress(){
+  const weeks=Array.from({length:30},(_,i)=>{
+    const r=rec('w'+(i+1)),p=PHASES.find(x=>i+1>=x.from&&i+1<=x.to);
+    return {week:i+1,phase:p.n,done:r.done,completed_at:r.at,hours:r.hours||STD[i],topic:document.querySelector(`.ck[data-k="w${i+1}"]`).closest('tr').children[2].textContent.trim()};
+  });
+  const done=weeks.filter(w=>w.done);
+  const data={
+    schema:"ai-study-progress/v1",project:"AI 硕士自学 30 周计划",
+    start:"2026-11-30",end:"2027-06-30",generated_at:new Date().toISOString(),
+    summary:{total_weeks:30,completed:done.length,percent:Math.round(done.length/30*100),hours:done.reduce((a,w)=>a+w.hours,0)},
+    phases:PHASES.map(p=>({name:p.n,total:p.to-p.from+1,done:weeks.filter(w=>w.done&&w.week>=p.from&&w.week<=p.to).length})),
+    weeks
+  };
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='progress.json';a.click();
+  URL.revokeObjectURL(a.href);
+  msg('已导出 progress.json，放进仓库 data/ 目录即可');
+}
+function importProgress(e){
+  const f=e.target.files[0];if(!f)return;
+  const rd=new FileReader();
+  rd.onload=()=>{try{
+    const d=JSON.parse(rd.result);
+    if(d.schema!=='ai-study-progress/v1'&&!Array.isArray(d.weeks))throw new Error('格式不符');
+    const s={};(d.weeks||[]).forEach(w=>{if(w.done)s['w'+w.week]={done:true,at:w.completed_at,hours:w.hours||STD[w.week-1]}});
+    state=s;save();refresh();msg(`已导入 ${Object.keys(s).length} 周记录`);
+  }catch(err){msg('导入失败：'+err.message)}};
+  rd.readAsText(f);e.target.value='';
+}
+function copySummary(){
+  const n=Array.from({length:30},(_,i)=>isDone('w'+(i+1))).filter(Boolean).length;
+  const pct=Math.round(n/30*100);
+  const lines=PHASES.map(p=>{const tot=p.to-p.from+1,dn=Array.from({length:tot},(_,i)=>isDone('w'+(p.from+i))).filter(Boolean).length;return `| ${p.n} | ${dn}/${tot} | ${'█'.repeat(Math.round(dn/tot*10))}${'░'.repeat(10-Math.round(dn/tot*10))} |`});
+  const md=`## 学习进度 ${pct}%\n\n已完成 ${n}/30 周\n\n| 阶段 | 完成 | 进度 |\n|---|---|---|\n${lines.join('\n')}\n`;
+  navigator.clipboard.writeText(md).then(()=>msg('Markdown 摘要已复制')).catch(()=>msg('复制失败，请手动选择'));
+}
+function msg(t){document.getElementById('ioMsg').textContent=t;setTimeout(()=>document.getElementById('ioMsg').textContent='',5000)}
+refresh();
+</script>
+</div>
+</body>
+</html>

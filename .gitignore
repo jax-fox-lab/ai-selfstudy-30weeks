@@ -1,0 +1,74 @@
+# ── macOS ──
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Windows ──
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.url
+
+# ── Python ──
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.env
+*.log
+
+# ── 模型权重 / 数据集（体积大，不进 git，见 DUAL_MACHINE.md 第七节）──
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+*.bin
+*.onnx
+models/
+data/raw/
+
+# ── 远程工具 / 本地配置 ──
+.sunlogin*
+oray/
+*.local.json
+
+# ── 密钥 / 凭证（绝对不能进仓库）──
+*.pem
+*.key
+id_ed25519*
+id_rsa*
+*_token.txt
+credentials*.json
+
+# ── 头像 / 封面图生成中间件（源图与脚本放本地，只提交成品 docs/*.png）──
+/tmp/
+*.tiff
+*.psd
+*.sketch
+
+# ── 测试 / 临时产物 ──
+*.tmp
+*.bak
+*.orig
+~$*
+test_*.json
+*_test.json
+
+# ── 大体积媒体（不进 git，见 README「哪些文件不该传」）──
+*.mp4
+*.mov
+*.avi
+*.zip
+*.tar.gz
+*.rar
+screenshots/
+recordings/
+
+# ── 依赖锁文件（本项目脚本零依赖，不需要）──
+package-lock.json
+yarn.lock

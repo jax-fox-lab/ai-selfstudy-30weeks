@@ -1,0 +1,52 @@
+name: Update progress stats
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'data/progress.json'
+      - 'data/weekly_tasks.json'
+      - 'scripts/generate_stats.py'
+      - 'scripts/generate_index.py'
+      - 'scripts/generate_weekly.py'
+      - '本周行动清单.md'
+      - 'README.md'
+      - 'weeks/**'
+      - '.github/workflows/update-stats.yml'
+  # 每周一 00:00 UTC（北京时间 08:00）刷新「当前周」定位
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate README stats, SVG, week index and current-week checklist
+        run: |
+          python3 scripts/generate_stats.py
+          python3 scripts/generate_index.py
+          python3 scripts/generate_weekly.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md docs/progress.svg weeks/INDEX.md 本周行动清单.md
+          if git diff --cached --quiet; then
+            echo "统计无变化，跳过提交"
+          else
+            git commit -m "chore: auto-update progress stats"
+            git push
+          fi

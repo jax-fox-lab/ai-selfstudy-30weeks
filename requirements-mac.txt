@@ -1,0 +1,32 @@
+# Mac (Apple M2 Pro / macOS 15.7 / Python 3.12) 依赖清单
+# 用法：pip install -r requirements-mac.txt
+# torch 系列走 MPS 后端，标准 wheel 即可
+
+numpy>=1.26,<3
+pandas>=2.0
+matplotlib>=3.7
+scikit-learn>=1.4
+jupyterlab>=4.0
+
+# PyTorch：Mac 上直接装官方 wheel，自动带 MPS 支持
+torch>=2.2
+torchvision>=0.17
+torchaudio>=2.2
+
+# 深度学习阶段
+transformers>=4.40
+datasets>=2.18
+tokenizers>=0.15
+
+# 大模型阶段（Mac 上优先 LoRA，不用 bitsandbytes）
+peft>=0.10
+accelerate>=0.28
+sentence-transformers>=3.0
+
+# RAG / Agent 阶段
+langchain>=0.1
+chromadb>=0.4
+
+# 说明：
+# - 不装 bitsandbytes（Mac MPS 支持不稳定），QLoRA 需要时挪到 Windows
+# - vLLM 在 Mac 需 vllm-metal 插件，见 docs/SETUP.md 第三节；W23 建议直接用 Windows

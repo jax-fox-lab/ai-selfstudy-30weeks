@@ -1,0 +1,22 @@
+# 统一换行符：避免 macOS(LF) 与 Windows(CRLF) 之间产生整文件 diff
+* text=auto eol=lf
+
+# 二进制文件不要让 git 改动
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.pt binary
+*.pth binary
+*.safetensors binary
+*.gguf binary
+*.bin binary
+*.zip binary
+*.gz binary
+*.woff binary
+*.woff2 binary
+
+# notebook 按文本处理，保证双机 diff 可读
+*.ipynb text eol=lf

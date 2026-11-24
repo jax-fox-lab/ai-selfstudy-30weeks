@@ -1,0 +1,41 @@
+# Windows (i7-13700KF / 32GB / RTX 4060 Ti / Python 3.11) 依赖清单
+# 用法：
+#   1) 先单独装 CUDA 版 torch（见下方），确认 torch.cuda.is_available() 为 True
+#   2) 再 pip install -r requirements-win.txt
+#
+# ⚠ CUDA 版 torch 不能用本文件直接装，必须单独指定 index-url：
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+numpy>=1.26,<3
+pandas>=2.0
+matplotlib>=3.7
+scikit-learn>=1.4
+jupyterlab>=4.0
+ipykernel>=6.29
+
+# 注意：torch / torchvision / torchaudio 已在上一步装好，此处不重复声明
+
+transformers>=4.40
+datasets>=2.18
+tokenizers>=0.15
+accelerate>=0.28
+peft>=0.10
+
+# QLoRA 4bit 量化：4060 Ti 8GB 也能跑 7B 的关键
+bitsandbytes>=0.43
+
+# RL / 生成模型阶段（阶段四选修）
+# trl>=0.8       # 需要时取消注释
+# diffusers>=0.27
+
+# RAG / Agent 阶段
+langchain>=0.1
+chromadb>=0.4
+sentence-transformers>=3.0
+
+# vLLM 部署（W23）：标准 CUDA 版直接装，Mac 上的 vllm-metal 坑在这里不存在
+# vllm>=0.5      # 需要时取消注释；装之前先确认驱动版本足够新
+
+# 说明：
+# - 显存 8GB 版：7B QLoRA 可行，batch size 调小；16GB 版更宽松
+# - 装完跑 python scripts/device_check.py 自检
