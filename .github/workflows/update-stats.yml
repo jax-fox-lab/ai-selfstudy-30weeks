@@ -5,15 +5,13 @@ on:
     branches: [main, master]
     paths:
       - 'data/progress.json'
-      - 'data/weekly_tasks.json'
       - 'scripts/generate_stats.py'
       - 'scripts/generate_index.py'
-      - 'scripts/generate_weekly.py'
-      - '本周行动清单.md'
       - 'README.md'
       - 'weeks/**'
       - '.github/workflows/update-stats.yml'
-  # 每周一 00:00 UTC（北京时间 08:00）刷新「当前周」定位
+  # 每周一 00:00 UTC（北京时间 08:00）兜底重算统计，保持仓库活跃
+  # 注：个人周清单已是本地私有文件，不再由云端生成
   schedule:
     - cron: '0 0 * * 1'
   workflow_dispatch:
@@ -33,17 +31,16 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Generate README stats, SVG, week index and current-week checklist
+      - name: Generate README stats, SVG and week index
         run: |
           python3 scripts/generate_stats.py
           python3 scripts/generate_index.py
-          python3 scripts/generate_weekly.py
 
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md docs/progress.svg weeks/INDEX.md 本周行动清单.md
+          git add README.md docs/progress.svg weeks/INDEX.md
           if git diff --cached --quiet; then
             echo "统计无变化，跳过提交"
           else

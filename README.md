@@ -4,11 +4,6 @@
 基于 CMU 机器学习硕士核心课、Stanford CS229/CS231n/CS224n、清华大学 CS 培养方案、
 教育部《人工智能领域研究生指导性培养方案（试行）》压缩，2026.11.30 – 2027.06.30。
 
-<!-- WEEKLY:START -->
-> 📌 **当前定位**：开学准备周（11/23–11/29）—— 把项目传上 GitHub、三平台身份就位。
-> 逐日任务、隐私检查和上传日流程见 **[本周行动清单](本周行动清单.md)**（由数据自动生成，每周刷新）。
-<!-- WEEKLY:END -->
-
 ![项目预览](docs/social-preview.png)
 
 [![进度自动更新](https://github.com/jax-fox-lab/ai-selfstudy-30weeks/actions/workflows/update-stats.yml/badge.svg)](https://github.com/jax-fox-lab/ai-selfstudy-30weeks/actions/workflows/update-stats.yml)
@@ -68,37 +63,27 @@ Actions 会在几十秒内自动更新上面的统计。想记录产出？`pytho
 **两台电脑都要用？** 看 **[双机学习与 GitHub 同步方案](docs/DUAL_MACHINE.md)**——双机分工、进度合并、冲突处理、
 Windows 环境配置都在这里。核心是 `scripts/merge_progress.py`：双机导出的进度先合并再 push，避免互相覆盖。
 
-**想把这个项目做成自媒体？** 看 [自媒体规划](docs/MEDIA_PLAN.md)——账号策略、主页观感优化、
-B站 + 小红书内容流水线、30 周发布节奏。
-**三个账号都没建设过？** 看 [三平台身份改造方案](docs/BRAND_SETUP.md)——昵称怎么定、旧号要不要换、
-统一头像、各平台改名规则坑，附 11/24–11/29 执行顺序。
-
 ## 目录结构
 
 ```
 .
 ├── README.md                  # 本文件，统计区块由脚本自动维护
-├── 本周行动清单.md             # 由进度数据自动生成的「当前周视图」，每周刷新 ★
 ├── LEARNINGS.md               # 踩坑记录（最有长期价值的文件）
 ├── CONTRIBUTING.md            # 贡献指南
 ├── LICENSE                    # MIT
 ├── data/
-│   ├── progress.json          # 唯一进度数据源（网页导出的文件放这里）
-│   └── weekly_tasks.json      # 本周行动清单的任务模板（准备周 / 每周流程 / 特殊周）
+│   └── progress.json          # 唯一进度数据源（网页导出的文件放这里）
 ├── docs/
 │   ├── plan.html              # 打卡网页 + 数据视图
 │   ├── progress.svg           # 自动生成的打卡热力图
 │   ├── UPLOAD_GUIDE.md        # 首次上传手册
 │   ├── DUAL_MACHINE.md        # 双机分工与 GitHub 同步方案 ★
-│   ├── MEDIA_PLAN.md          # 自媒体规划（账号 / 主页 / 内容流水线）
-│   ├── BRAND_SETUP.md         # 三平台身份改造方案（昵称 / 头像 / 改名规则）
 │   ├── SETUP.md               # 环境与算力指南（Mac + Windows）
 │   ├── social-preview.png     # 仓库社交预览图 1280×640
 │   └── avatar.png             # 三平台统一头像 512×512（像素Q版人物 + 狐狸 + AI芯片徽章）
 ├── scripts/
 │   ├── generate_stats.py      # 统计生成脚本，零依赖
 │   ├── generate_index.py      # 生成周产出索引 INDEX.md
-│   ├── generate_weekly.py     # 生成本周行动清单 + README 定位区块
 │   ├── new_week.py            # 周产出目录脚手架
 │   ├── merge_progress.py      # 双机进度合并（避免互相覆盖）
 │   └── device_check.py        # 设备自检（cuda / mps / cpu）
@@ -167,12 +152,13 @@ git commit -am "progress: merge mac+win" && git push
 python3 scripts/generate_stats.py          # 生成 README 区块 + docs/progress.svg
 python3 scripts/generate_stats.py --check  # CI 检查统计是否过期
 python3 scripts/generate_index.py          # 生成 weeks/INDEX.md 产出索引
-python3 scripts/generate_weekly.py         # 刷新本周行动清单 + README 定位区块
-python3 scripts/generate_weekly.py --week 13 --print  # 预览第 13 周任务
 python3 scripts/new_week.py --all          # 查看 30 周主题清单
 ```
 
 不需要 `pip install`，只用 Python 标准库。
+
+> 💡 个人执行用的「本周行动清单」及其生成脚本是本地私有文件（见 `.gitignore`），
+> 不随本仓库开源，因此不在上述命令和目录结构中。
 
 ## 课程来源
 

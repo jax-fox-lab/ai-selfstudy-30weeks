@@ -72,3 +72,10 @@ recordings/
 # ── 依赖锁文件（本项目脚本零依赖，不需要）──
 package-lock.json
 yarn.lock
+
+# ── 本地私有文件（个人执行计划 / 自媒体身份，不开源）──
+本周行动清单.md
+scripts/generate_weekly.py
+data/weekly_tasks.json
+docs/BRAND_SETUP.md
+docs/MEDIA_PLAN.md
