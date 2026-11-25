@@ -79,3 +79,6 @@ scripts/generate_weekly.py
 data/weekly_tasks.json
 docs/BRAND_SETUP.md
 docs/MEDIA_PLAN.md
+
+# 自媒体发布素材（开篇宣言图文等），不开源
+personal/
