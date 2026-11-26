@@ -21,6 +21,10 @@ env/
 .env
 *.log
 
+# ── IDE 本地配置（个人设置，不进仓库）──
+.idea/
+.vscode/
+
 # ── 模型权重 / 数据集（体积大，不进 git，见 DUAL_MACHINE.md 第七节）──
 *.pt
 *.pth

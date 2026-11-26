@@ -109,8 +109,14 @@ def notebook_content(w):
             {"cell_type": "code", "execution_count": None, "metadata": {}, "outputs": [], "source": []},
         ],
         "metadata": {
-            "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
-            "language_info": {"name": "python"},
+            # 指向项目专用内核（注册名 ai30w-py312），避免 IDE 选到 conda 的 python3
+            # 若换机器，用 `python -m ipykernel install --user --name ai30w-py312` 注册即可
+            "kernelspec": {
+                "display_name": "Python 3.12 (ai-selfstudy-30weeks)",
+                "language": "python",
+                "name": "ai30w-py312",
+            },
+            "language_info": {"name": "python", "version": "3.12"},
         },
         "nbformat": 4,
         "nbformat_minor": 5,
